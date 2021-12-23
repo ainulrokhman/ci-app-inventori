@@ -3,10 +3,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Laporan extends CI_Controller
 {
+    protected $USER;
+    public function __construct()
+    {
+        parent::__construct();
+        $this->USER = $this->session->userdata('logged_in');
+        if (!isset($this->USER)) {
+            redirect(base_url('user/login'));
+        }
+    }
+
     public function masuk()
     {
         $this->load->model('Masuk_model');
         $data = [
+            'user' => $this->USER,
             'title' => 'Laporan Barang Masuk',
             'data' => $this->Masuk_model->getData(),
             'css' => ["https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"],
@@ -31,6 +42,7 @@ class Laporan extends CI_Controller
     {
         $this->load->model('Keluar_model');
         $data = [
+            'user' => $this->USER,
             'title' => 'Laporan Barang Keluar',
             'data' => $this->Keluar_model->getData(),
             'css' => ["https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"],

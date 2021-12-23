@@ -3,6 +3,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Barang extends CI_Controller
 {
+    protected $USER;
+    public function __construct()
+    {
+        parent::__construct();
+        $this->USER = $this->session->userdata('logged_in');
+        if (!isset($this->USER)) {
+            redirect(base_url('user/login'));
+        }
+    }
+
     public function stok()
     {
         $this->load->model('Barang_model');
@@ -13,6 +23,7 @@ class Barang extends CI_Controller
             echo json_encode($data);
         } else {
             $data = [
+                'user' => $this->USER,
                 'title' => 'Stok Barang',
                 'data' => $this->Barang_model->getData(),
                 'css' => ["https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"],
@@ -66,6 +77,7 @@ class Barang extends CI_Controller
             echo json_encode($data);
         } else {
             $data = [
+                'user' => $this->USER,
                 'title' => 'Data Barang Masuk',
                 "barang" => $this->Barang_model->getData(),
                 'data' => $this->Masuk_model->getData(),
@@ -120,6 +132,7 @@ class Barang extends CI_Controller
             echo json_encode($data);
         } else {
             $data = [
+                'user' => $this->USER,
                 'title' => 'Data Barang Keluar',
                 "barang" => $this->Barang_model->getData(),
                 'data' => $this->Keluar_model->getData(),
