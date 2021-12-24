@@ -63,7 +63,7 @@
                     <div class="mb-3 row">
                         <label for="tanggal" class="col-sm-4 col-form-label">Tanggal</label>
                         <div class="col-sm-8">
-                            <input name="tgl" type="text" class="form-control">
+                            <input name="tgl" type="date" class="form-control">
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -117,7 +117,7 @@
                     <div class="mb-3 row">
                         <label for="tanggal" class="col-sm-4 col-form-label">Tanggal</label>
                         <div class="col-sm-8">
-                            <input name="tgl" type="text" class="form-control" id="tanggal">
+                            <input name="tgl" type="date" class="form-control" id="tanggal">
                         </div>
                     </div>
                     <div class="mb-3 row">

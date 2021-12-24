@@ -15,12 +15,19 @@ class Welcome extends CI_Controller
 
 	public function index()
 	{
+		$this->load->model("Barang_model");
+		$this->load->model("Keluar_model");
+		$this->load->model("Masuk_model");
 		$data = [
+			"total_barang" => count($this->Barang_model->getData()),
+			"transaksi_masuk" => count($this->Masuk_model->getData()),
+			"transaksi_keluar" => count($this->Keluar_model->getData()),
 			"user" => $this->USER,
 			'title' => 'Dashboard',
 		];
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
+		$this->load->view('index');
 		$this->load->view('template/footer');
 	}
 }

@@ -54,4 +54,27 @@ class User extends CI_Controller
         $this->session->set_flashdata('notify', "<div class='alert alert-success'>Logout berhasil!</div>");
         redirect(base_url('user/login'));
     }
+
+    public function add()
+    {
+        $this->db->insert('user', $this->INPUT);
+        $this->session->set_flashdata('notify', "<div class='alert alert-success'>User berhasil ditambahkan!</div>");
+        redirect(base_url('user'));
+    }
+
+    public function delete($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete("user");
+        $this->session->set_flashdata('notify', "<div class='alert alert-success'>User berhasil dihapus!</div>");
+        redirect(base_url('user'));
+    }
+
+    public function update()
+    {
+        $this->db->where('id', $this->INPUT['id']);
+        $this->db->update("user", $this->INPUT);
+        $this->session->set_flashdata('notify', "<div class='alert alert-success'>User berhasil diubah!</div>");
+        redirect(base_url('user'));
+    }
 }

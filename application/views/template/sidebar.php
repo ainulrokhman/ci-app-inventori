@@ -6,13 +6,13 @@
                     <?php if ($user['role'] === "Administrator") : ?>
                         <div class="sb-sidenav-menu-heading">Core</div>
                         <a class="nav-link" href="<?= base_url('user') ?>">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                             User
                         </a>
                     <?php endif; ?>
                     <div class="sb-sidenav-menu-heading">Master</div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#barang" aria-expanded="false" aria-controls="barang">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
                         Barang
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="sb-sidenav-menu-heading">Interface</div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                         Laporan
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>

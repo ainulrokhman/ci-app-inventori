@@ -35,7 +35,7 @@
                                     <i title="Edit" class="fas fa-edit"></i>
                                 </a>
                                 <?php if ($d['role'] != "Administrator") : ?>
-                                    <a href="<?= base_url("barang/hapuskeluar/${d['id']}") ?>" onclick="return confirm('Yakin untuk menghapus?')" class="badge bg-danger text-decoration-none">
+                                    <a href="<?= base_url("user/delete/${d['id']}") ?>" onclick="return confirm('Yakin untuk menghapus?')" class="badge bg-danger text-decoration-none">
                                         <i title="Hapus" class="fas fa-trash"></i>
                                     </a>
                                 <?php endif; ?>
@@ -53,16 +53,36 @@
 <div class="modal fade" id="input" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="<?= base_url("barang/addkeluar") ?>" method="post">
+            <form action="<?= base_url("user/add") ?>" method="post">
+                <input type="hidden" name="role_id" value="2">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editModalLabel">Form User</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3 row">
-                        <label for="tanggal" class="col-sm-4 col-form-label">Tanggal</label>
+                        <label for="nama_lengkap" class="col-sm-4 col-form-label">Nama Lengkap</label>
                         <div class="col-sm-8">
-                            <input name="tgl" type="text" class="form-control">
+                            <input name="nama_lengkap" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="username" class="col-sm-4 col-form-label">Username</label>
+                        <div class="col-sm-8">
+                            <input name="username" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="password" class="col-sm-4 col-form-label">Password</label>
+                        <div class="col-sm-8">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <input name="password" type="password" class="form-control password" value="123">
+                                <div class="input-group-append py-2">
+                                    <div class="input-group-text togglePassword" id="">
+                                        <i class="fa fa-eye-slash" id="eye2"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -101,7 +121,14 @@
                     <div class="mb-3 row">
                         <label for="password" class="col-sm-4 col-form-label">Password</label>
                         <div class="col-sm-8">
-                            <input name="password" type="password" class="form-control" id="password">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <input type="password" class="form-control password" id="password" placeholder="Username">
+                                <div class="input-group-append py-2">
+                                    <div class="input-group-text togglePassword" id="">
+                                        <i class="fa fa-eye-slash" id="eye1"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -119,7 +146,22 @@
     $(document).ready(function() {
         // datatable
         $('#tabel-user').DataTable();
+
+        // show off password
+        $('.togglePassword').on('click', function() {
+            var type = $("#password").attr("type");
+            if (type === "password") {
+                $(".password").attr("type", "text");
+                $("#eye1").attr("class", "fa fa-eye");
+                $("#eye2").attr("class", "fa fa-eye");
+            } else {
+                $(".password").attr("type", "password");
+                $("#eye1").attr("class", "fa fa-eye-slash");
+                $("#eye2").attr("class", "fa fa-eye-slash");
+            }
+        });
     });
+
 
     // edit data
     $(".edit").on("click", function() {
