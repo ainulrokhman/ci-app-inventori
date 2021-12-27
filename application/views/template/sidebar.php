@@ -31,6 +31,7 @@
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="<?= base_url('laporan/stok') ?>">Stok Barang</a>
                             <a class="nav-link" href="<?= base_url('laporan/masuk') ?>">Barang Masuk</a>
                             <a class="nav-link" href="<?= base_url('laporan/keluar') ?>">Barang Keluar</a>
                         </nav>
