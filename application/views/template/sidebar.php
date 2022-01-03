@@ -9,20 +9,20 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                             User
                         </a>
+                        <div class="sb-sidenav-menu-heading">Master</div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#barang" aria-expanded="false" aria-controls="barang">
+                            <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
+                            Barang
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="barang" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="<?= base_url('barang/stok') ?>">Stok</a>
+                                <a class="nav-link" href="<?= base_url('barang/masuk') ?>">Barang Masuk</a>
+                                <a class="nav-link" href="<?= base_url('barang/keluar') ?>">Barang Keluar</a>
+                            </nav>
+                        </div>
                     <?php endif; ?>
-                    <div class="sb-sidenav-menu-heading">Master</div>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#barang" aria-expanded="false" aria-controls="barang">
-                        <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
-                        Barang
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="barang" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="<?= base_url('barang/stok') ?>">Stok</a>
-                            <a class="nav-link" href="<?= base_url('barang/masuk') ?>">Barang Masuk</a>
-                            <a class="nav-link" href="<?= base_url('barang/keluar') ?>">Barang Keluar</a>
-                        </nav>
-                    </div>
                     <div class="sb-sidenav-menu-heading">Interface</div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
