@@ -20,6 +20,7 @@
                     <tr>
                         <th>Tanggal</th>
                         <th>Nama Barang</th>
+                        <th>Merk</th>
                         <th>Jumlah</th>
                         <th>Sumber dana</th>
                         <th>Keterangan</th>
@@ -31,6 +32,7 @@
                         <tr>
                             <td><?= $d['tgl'] ?></td>
                             <td><?= $d['nama_barang'] ?></td>
+                            <td><?= $d['merk'] ?></td>
                             <td><?= $d['jml'] ?></td>
                             <td><?= $d['sumber_dana'] ?></td>
                             <td><?= $d['keterangan'] ?></td>

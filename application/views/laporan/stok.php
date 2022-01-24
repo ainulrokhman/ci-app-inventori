@@ -8,6 +8,7 @@
                 <thead>
                     <tr>
                         <th>Nama Barang</th>
+                        <th>Merk</th>
                         <th>Stok</th>
                     </tr>
                 </thead>
@@ -15,6 +16,7 @@
                     <?php foreach ($data as $d) : ?>
                         <tr>
                             <td><?= $d['nama_barang'] ?></td>
+                            <td><?= $d['merk'] ?></td>
                             <?php if ($d['total']) : ?>
                                 <td><?= $d['total'] ?></td>
                             <?php else : ?>

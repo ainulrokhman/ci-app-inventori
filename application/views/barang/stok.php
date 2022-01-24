@@ -19,6 +19,7 @@
                 <thead>
                     <tr>
                         <th>Nama Barang</th>
+                        <th>Nama Barang</th>
                         <th>Stok</th>
                         <th>Aksi</th>
                     </tr>
@@ -27,6 +28,7 @@
                     <?php foreach ($data as $d) : ?>
                         <tr>
                             <td><?= $d['nama_barang'] ?></td>
+                            <td><?= $d['merk'] ?></td>
                             <?php if ($d['total']) : ?>
                                 <td><?= $d['total'] ?></td>
                             <?php else : ?>
@@ -59,9 +61,15 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-3 row">
-                        <label for="tanggal" class="col-sm-4 col-form-label">Nama Barang</label>
+                        <label class="col-sm-4 col-form-label">Nama Barang</label>
                         <div class="col-sm-8">
                             <input name="nama_barang" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-4 col-form-label">Merk</label>
+                        <div class="col-sm-8">
+                            <input name="merk" type="text" class="form-control">
                         </div>
                     </div>
                 </div>
