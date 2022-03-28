@@ -17,6 +17,7 @@ $(".edit").on("click", function() {
         success: function(data){
             $("#id").val(data.id);
             $("#nama_barang").val(data.nama_barang);
+            $("#merk").val(data.merk);
         }
       });
 })

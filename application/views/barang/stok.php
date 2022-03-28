@@ -19,7 +19,7 @@
                 <thead>
                     <tr>
                         <th>Nama Barang</th>
-                        <th>Nama Barang</th>
+                        <th>Merk</th>
                         <th>Stok</th>
                         <th>Aksi</th>
                     </tr>
@@ -96,6 +96,12 @@
                         <label for="tanggal" class="col-sm-4 col-form-label">Nama Barang</label>
                         <div class="col-sm-8">
                             <input name="nama_barang" type="text" class="form-control" id="nama_barang">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="tanggal" class="col-sm-4 col-form-label">Nama Barang</label>
+                        <div class="col-sm-8">
+                            <input name="merk" type="text" class="form-control" id="merk">
                         </div>
                     </div>
                 </div>
